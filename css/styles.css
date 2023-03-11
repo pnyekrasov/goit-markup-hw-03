@@ -27,16 +27,14 @@
   --hero-btn-text: #ffffff;
   --filter-btn-text-active: #ffffff;
   --hero-caption: #ffffff;
+
+  /**                         Gallary                 */
+
+  --gap: 24px;
+  --carts: 4;
 }
 
-body {
-  background-color: var(--body-background);
-  color: var(--body-text);
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
+/**                         Reset                   */
 
 h1,
 h2,
@@ -53,17 +51,30 @@ ul {
 
 img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+/**                       Bases                      */
+
+body {
+  background-color: var(--body-background);
+  color: var(--body-text);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /**                     Components                   */
 
 .container {
+  width: 100%;
   max-width: 1158px;
   padding: 0 15px;
-  outline: 2px solid red;
   margin: 0 auto;
+  outline: 2px solid red;
 }
 
 .link {
@@ -71,7 +82,9 @@ img {
 }
 
 .logo {
-  color: var(--primary-brand);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: var(--logo);
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -87,7 +100,6 @@ img {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
@@ -96,7 +108,6 @@ img {
 
 .title {
   text-align: center;
-
   color: var(--titles);
   font-size: 36px;
   line-height: 1.11;
@@ -107,6 +118,15 @@ img {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+}
+
+.grid-list {
+  display: flex;
+  gap: var(--gap);
+}
+
+.grid-item {
+  flex-basis: calc((100% - (var(--carts) - 1) * var(--gap)) / var(--carts));
 }
 
 /*TODO                     Header                      */
@@ -125,30 +145,24 @@ img {
 
 /**                         Logo                       */
 
-.logo {
-  outline: 2px solid greenyellow;
-}
-
 .logo-hpart {
   color: var(--logo-hpart);
 }
 
 /**                        Sheets                      */
 
-.page-nav {
+.header-list {
   display: flex;
+  align-items: center;
   margin-left: 76px;
   gap: 40px;
 }
-.page-item {
-  padding-top: 24px;
-  padding-bottom: 24px;
+.header-item {
 }
 
-.sheet {
+.header-sheet {
   font-weight: 500;
   color: var(--sheets-normal);
-  outline: 2px solid royalblue;
 }
 
 .normal:is(:hover, :focus),
@@ -175,7 +189,6 @@ img {
   color: var(--adress-normal);
   text-decoration: none;
   font-style: normal;
-  outline: 2px solid darkgreen;
 }
 
 .contact:is(:hover, :focus) {
@@ -196,8 +209,6 @@ img {
 }
 
 .hero-title {
-  margin-bottom: 48px;
-
   color: var(--hero-caption);
   font-size: 56px;
   line-height: 1.07;
@@ -205,9 +216,11 @@ img {
 }
 
 .hero-button {
+  display: block;
+  margin: 48px auto 0;
+  padding: 16px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
   color: var(--hero-btn-text);
   background-color: var(--hero-btn-normal);
   font-family: inherit;
@@ -218,14 +231,7 @@ img {
 }
 
 .hero-button:is(:hover, :focus) {
-  font-weight: 700;
-  line-height: 1.19;
-}
-
-.hero-button:active {
-  background-color: var(--pressed-state);
-  font-weight: 500;
-  line-height: 1.5;
+  background-color: var(--hero-btn-active);
 }
 
 /**             Possibilities section             */
@@ -247,7 +253,7 @@ img {
 }
 
 .possibilities-subtitle {
-  margin-top: 8px;
+  margin-bottom: 8px;
 }
 .possibilities-text {
 }
@@ -268,35 +274,39 @@ img {
 .works-pictures {
 }
 .works-item {
+  --carts: 3;
 }
 
 /**                     Our Team                    */
 
 .team {
-  background-color: var(--light);
+  background-color: var(--teem-background);
 }
+/* var(--light) */
 
 .team-container {
   padding-top: 120px;
   padding-bottom: 120px;
 }
 .team-title {
-  margin-bottom: 72px;
 }
 
 .team-photos {
+  margin-top: 72px;
 }
 .team-item {
-  padding-top: 32px;
   background-color: var(--body-background);
 }
 
 .team-subtitle {
   margin-top: 32px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .team-text {
+  margin-bottom: 32px;
+  text-align: center;
 }
 .team-item > {
 }
@@ -365,7 +375,7 @@ img {
 .project-card-text {
   padding-left: 16px;
 }
-.tproject-card-subtitle {
+.project-card-subtitle {
 }
 
 /**TODO                   footer                       */
@@ -386,4 +396,6 @@ img {
 
 .footer-tex {
   margin-top: 16px;
+  width: 100%;
+  max-width: 264px;
 }
