@@ -74,7 +74,6 @@ body {
   max-width: 1158px;
   padding: 0 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 
 .link {
@@ -359,12 +358,12 @@ body {
 .project-card-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
   row-gap: 48px;
 }
 
 .project-card-item {
   padding-bottom: 32px;
+  --carts: 3;
 }
 
 .project-card-subtitle {
